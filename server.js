@@ -3,7 +3,9 @@ import express from "express";
 const PORT = 8000
 const app = express()
 
-app.get('/', (req, res) => {
+app.use(express.static('public'))
+
+app.get('/api', (req, res) => {
     res.json({message: 'Hello From Server!'})
 
     console.log('Working!')
