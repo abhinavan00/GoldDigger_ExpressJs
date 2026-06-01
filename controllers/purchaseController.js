@@ -1,8 +1,10 @@
 import { addNewInvestment } from "../utils/addNewInvestment.js"
+import { sanitizeJSONBody } from "../utils/sanitizeJSONBody.js"
 
 export async function purchaseController(req, res) {
     const rawBody = req.body
-    await addNewInvestment(rawBody)
+    const cleanBody = sanitizeJSONBody(rawBody)
+    await addNewInvestment(cleanBody)
 
-    res.json('Working')
+    res.json(cleanBody)
 }
