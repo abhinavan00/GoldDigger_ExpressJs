@@ -22,7 +22,7 @@
             <p>£<span id="price-display" class="price" aria-live="assertive">----.--</span> / Oz*</p>
             <p id="connection-status" class="status" aria-live="polite">Live Price 🟢</p>
         </section>
-        <form>
+        <form id="investment-form">
             <label for="investment-amount">Amount to invest</label>
             <div class="input-container">
                 <div class="currency">£</div>
@@ -39,5 +39,6 @@
         <p class="footnote">* 1oz = 1 troy ounce of 24 Carat Gold</p>
     </main>
     <script type="module" src="index.js"></script>
+    <script src="live.js" type="module"></script>
 </body>
 </html>

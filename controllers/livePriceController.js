@@ -2,7 +2,7 @@ import { prices } from "../data/prices.js"
 
 export function livePriceController(req, res) {
     res.setHeader('Content-Type', 'text/event-stream')
-    res.setHeader('Cache-Controll', 'no-cache')
+    res.setHeader('Cache-Control', 'no-cache')
     res.setHeader('Connection', 'keep-alive')
 
     setInterval(() => {
@@ -12,7 +12,7 @@ export function livePriceController(req, res) {
             `data: ${JSON.stringify({
                 event: 'price-update',
                 price: prices[randomIndex]
-            })} \n\n`
+            })}\n\n`
         )
     }, 3000)
 }
